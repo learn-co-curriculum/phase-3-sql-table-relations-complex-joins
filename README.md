@@ -1,6 +1,6 @@
-# Complex Joins in SQL
+# Complex Joins
 
-## Objectives
+## Learning Goals
 
 - Know what an outer join is
 - Distinguish an inner join from an outer join
