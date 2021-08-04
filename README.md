@@ -54,7 +54,7 @@ As you may recall, an inner join is going to return only the rows from the
 database that match the query. For example, imagine we have the following
 tables:
 
-```text
+```bash
 TEACHERS TABLE             STUDENTS TABLE
 id                         student_id   teacher_id
 ---------------            ------------------------
@@ -75,7 +75,7 @@ ON Teachers.id = Students.teacher_id;
 This query returns only the teacher with the `id = 1` because student 2 is in
 the first teacher's class.
 
-```text
+```bash
 id  |  student_id |  teacher_id
 --------------------------
 1   |  2          |  1
@@ -111,7 +111,7 @@ LEFT OUTER JOIN Students
 ON Teachers.teacher_id = Students.teacher_id;
 ```
 
-```text
+```bash
 teacher_id  |  student_id
 --------------------------
 1           |  2
@@ -135,7 +135,7 @@ RIGHT OUTER JOIN Students
 ON Teachers.teacher_id = Students.teacher_id;
 ```
 
-```text
+```bash
 teacher_id     |  student_id
 --------------------------
 NULL           |  1
@@ -154,7 +154,7 @@ FULL OUTER JOIN Students
 ON Teachers.teacher_id = Students.teacher_id;
 ```
 
-```text
+```bash
 teacher_id     |  student_id
 --------------------------
 NULL           |  1
@@ -218,7 +218,7 @@ INSERT INTO students (name, teacher_id)
 
 ### Students Schema
 
-```text
+```bash
 id               name        teacher_id
 ---------------  ----------  ----------
 1                Dave           1
@@ -250,7 +250,7 @@ INSERT INTO teachers (name)
 
 ### Teachers Schema
 
-```text
+```bash
 id               name
 ---------------  ---------
 1                Joe
@@ -274,7 +274,7 @@ column is `NULL`.
 
 ### Results
 
-```text
+```bash
 id  teacher_name    id      name     teacher_id
 --- ------------   ----    ------    -----------
 1     Joe          3       Bob          1
@@ -299,7 +299,7 @@ of the students were returned, but this time Jeff was left out.
 
 ### Results
 
-```text
+```bash
 id    teacher_name   id      name     teacher_id
 ---   ------------  ----    ------    -----------
 1       Joe         3       Bob          1
@@ -312,14 +312,14 @@ NULL    NULL        6       Alexis       NULL
 
 ## Full Join
 
-```text
+```sql
 SELECT * from Teachers
    FULL OUTER JOIN Students on Teachers.id = Students.teacher_id;
 ```
 
 This Join can be referred to as a FULL OUTER JOIN or a FULL JOIN. This query will return all of the records from both tables, joining records from the left table (`Teachers`) that match records from the right table (`Students`).
 
-```text
+```bash
 id    teacher_name   id      name     teacher_id
 ---   ------------  ----    ------    -----------
 1       Joe          3       Bob          1
